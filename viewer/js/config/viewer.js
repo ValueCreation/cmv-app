@@ -239,16 +239,6 @@ define([
                     expanded: false
                 }
             },
-            identify: {
-                include: true,
-                id: 'identify',
-                type: 'titlePane',
-                path: 'gis/dijit/Identify',
-                title: 'Identify',
-                open: false,
-                position: 3,
-                options: 'config/identify'
-            },
             basemaps: {
                 include: true,
                 id: 'basemaps',
@@ -367,146 +357,14 @@ define([
                     overlayReorder: true
                 }
             },
-            bookmarks: {
+            mycontents: {
                 include: true,
-                id: 'bookmarks',
-                type: 'titlePane',
-                path: 'gis/dijit/Bookmarks',
-                title: 'Bookmarks',
+                id: 'layerlist',
+                type: 'floating',
+                path: 'gis/dijit/MyContents',
+                title: 'マイコンテンツ',
                 open: false,
-                position: 2,
-                options: 'config/bookmarks'
-            },
-            find: {
-                include: true,
-                id: 'find',
-                type: 'titlePane',
-                canFloat: true,
-                path: 'gis/dijit/Find',
-                title: 'Find',
-                open: false,
-                position: 3,
-                options: 'config/find'
-            },
-            draw: {
-                include: true,
-                id: 'draw',
-                type: 'titlePane',
-                canFloat: true,
-                path: 'gis/dijit/Draw',
-                title: 'Draw',
-                open: false,
-                position: 4,
-                options: {
-                    map: true,
-                    mapClickMode: true
-                }
-            },
-            measure: {
-                include: true,
-                id: 'measurement',
-                type: 'titlePane',
-                canFloat: true,
-                path: 'gis/dijit/Measurement',
-                title: 'Measurement',
-                open: false,
-                position: 5,
-                options: {
-                    map: true,
-                    mapClickMode: true,
-                    defaultAreaUnit: units.SQUARE_MILES,
-                    defaultLengthUnit: units.MILES
-                }
-            },
-            print: {
-                include: true,
-                id: 'print',
-                type: 'titlePane',
-                canFloat: true,
-                path: 'gis/dijit/Print',
-                title: 'Print',
-                open: false,
-                position: 6,
-                options: {
-                    map: true,
-                    printTaskURL: 'https://utility.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task',
-                    copyrightText: 'Copyright 2014',
-                    authorText: 'Me',
-                    defaultTitle: 'Viewer Map',
-                    defaultFormat: 'PDF',
-                    defaultLayout: 'Letter ANSI A Landscape'
-                }
-            },
-            directions: {
-                include: true,
-                id: 'directions',
-                type: 'titlePane',
-                path: 'gis/dijit/Directions',
-                title: 'Directions',
-                open: false,
-                position: 7,
-                options: {
-                    map: true,
-                    mapRightClickMenu: true,
-                    options: {
-                        routeTaskUrl: 'http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Route',
-                        routeParams: {
-                            directionsLanguage: 'en-US',
-                            directionsLengthUnits: units.MILES
-                        },
-                        active: false //for 3.12, starts active by default, which we dont want as it interfears with mapClickMode
-                    }
-                }
-            },
-            editor: {
-                include: true,
-                id: 'editor',
-                type: 'titlePane',
-                path: 'gis/dijit/Editor',
-                title: 'Editor',
-                open: false,
-                position: 8,
-                options: {
-                    map: true,
-                    mapClickMode: true,
-                    editorLayerInfos: true,
-                    settings: {
-                        toolbarVisible: true,
-                        showAttributesOnClick: true,
-                        enableUndoRedo: true,
-                        createOptions: {
-                            polygonDrawTools: ['freehandpolygon', 'autocomplete']
-                        },
-                        toolbarOptions: {
-                            reshapeVisible: true,
-                            cutVisible: true,
-                            mergeVisible: true
-                        }
-                    }
-                }
-            },
-            streetview: {
-                include: true,
-                id: 'streetview',
-                type: 'titlePane',
-                canFloat: true,
-                position: 9,
-                path: 'gis/dijit/StreetView',
-                title: 'Google Street View',
-                paneOptions: {
-                    resizable: true,
-                    resizeOptions: {
-                        minSize: {
-                            w: 250,
-                            h: 250
-                        }
-                    }
-                },
-                options: {
-                    map: true,
-                    mapClickMode: true,
-                    mapRightClickMenu: true
-                }
+                options: 'config/mycontents'
             },
             help: {
                 include: true,
