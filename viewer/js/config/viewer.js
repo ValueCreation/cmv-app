@@ -50,7 +50,7 @@ define([
         // map options, passed to map constructor. see: https://developers.arcgis.com/javascript/jsapi/map-amd.html#map1
         mapOptions: {
             basemap: 'streets',
-            center: [-96.59179687497497, 39.09596293629694],
+            center: [138.67305450439198, 36.241747715097375],
             zoom: 5,
             sliderStyle: 'small'
         },
@@ -86,61 +86,6 @@ define([
         // The 'options' object is passed as the layers options for constructor. Title will be used in the legend only. id's must be unique and have no spaces.
         // 3 'mode' options: MODE_SNAPSHOT = 0, MODE_ONDEMAND = 1, MODE_SELECTION = 2
         operationalLayers: [{
-            type: 'feature',
-            url: 'http://services1.arcgis.com/6bXbLtkf4y11TosO/arcgis/rest/services/Restaurants/FeatureServer/0',
-            title: 'Restaurants',
-            options: {
-                id: 'restaurants',
-                opacity: 1.0,
-                visible: true,
-                outFields: ['*'],
-                mode: 0
-            },
-            editorLayerInfos: {
-                disableGeometryUpdate: false
-            },
-            legendLayerInfos: {
-                exclude: false,
-                layerInfo: {
-                    title: 'Restaurants'
-                }
-            }
-        }, {
-            type: 'feature',
-            url: 'http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/SanFrancisco/311Incidents/FeatureServer/0',
-            title: 'San Francisco 311 Incidents',
-            options: {
-                id: 'sf311Incidents',
-                opacity: 1.0,
-                visible: true,
-                outFields: ['req_type', 'req_date', 'req_time', 'address', 'district'],
-                mode: 0
-            }
-        }, {
-            type: 'dynamic',
-            url: 'http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyOperationalLayers/MapServer',
-            title: 'Louisville Public Safety',
-            options: {
-                id: 'louisvillePubSafety',
-                opacity: 1.0,
-                visible: true,
-                imageParameters: buildImageParameters({
-                    layerIds: [0, 2, 4, 5, 8, 10, 12, 21],
-                    layerOption: 'show'
-                })
-            },
-            identifyLayerInfos: {
-                layerIds: [2, 4, 5, 8, 12, 21]
-            },
-            layerControlLayerInfos: {
-                layerIds: [0, 2, 4, 5, 8, 9, 10, 12, 21]
-            },
-            legendLayerInfos: {
-                layerInfo: {
-                    hideLayers: [21]
-                }
-            }
-        }, {
             type: 'dynamic',
             url: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/DamageAssessment/MapServer',
             title: 'Damage Assessment',
@@ -332,7 +277,7 @@ define([
                 include: true,
                 id: 'legend',
                 type: 'titlePane',
-                path: 'esri/dijit/Legend',
+                path: 'gis/dijit/common/customLegend',
                 title: 'Legend',
                 open: false,
                 position: 0,
@@ -361,7 +306,7 @@ define([
                 include: true,
                 id: 'layerlist',
                 type: 'floating',
-                path: 'gis/dijit/MyContents',
+                path: 'gis/dijit/common/MyContents',
                 title: 'マイコンテンツ',
                 open: false,
                 options: 'config/mycontents'
