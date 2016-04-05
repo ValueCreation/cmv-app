@@ -26,6 +26,9 @@ define([
             } else {
                 this._expandRemove();
             }
+        },
+        destroy: function () {
+            this.inherited(arguments);
         }
     });
     return FeatureControl;
